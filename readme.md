@@ -12,42 +12,24 @@ Built by: [Mario Lo](https://github.com/mariolo1985)
 yarn add simply-requests
 ```
 
-## Example
-
-## Styles
-
-At the moment, styles has to be add one of two ways:
-
-- Import the SCSS file
-
-```javascript
-@import '/node_modules/simply-requests/dist/scss/master.scss';
-```
-
-- Copy the CSS directly from the following file
-
-```
-/node_modules/simply-requests/dist/css/master.min.css
-```
-
 ## Functions
 
-> httpRequest
+### httpRequest
 
 ```javascript
-import {httpRequest} from 'simply-requests';
+import { xmlHttpRequest } from 'simply-requests';
 
 const myCallback = (response) => {
     console.log('response: ', response);
 };
 
 (() => {
-    httpRequest('/data/menu.json', myCallback);
+    xmlHttpRequest('/data/menu.json', myCallback);
 })();
 
 ```
 
-### Parameters
+#### Parameters
 
 | Parameter Name   | Type   | Required   | Default Value   | Description   |
 | --- | --- | --- | --- | --- |
@@ -66,7 +48,7 @@ The path to your file
 
 Function to call when a response happens
 
-### Return value
+#### Return value
 
 | Response State | Value |
 | --- | --- |
@@ -75,7 +57,7 @@ Function to call when a response happens
 | Completed but not done | null |
 
 
-> xmlHttpRequestOnSuccess
+### xmlHttpRequestOnSuccess
 
 ```javascript
 import {xmlHttpRequestOnSuccess} from 'simply-requests';
@@ -90,7 +72,7 @@ const myCallback = (response) => {
 
 ```
 
-### Parameters
+#### Parameters
 
 | Parameter Name   | Type   | Required   | Default Value   | Description   |
 | --- | --- | --- | --- | --- |
@@ -109,7 +91,7 @@ The path to your file
 
 Function to call when a response happens
 
-### Return value
+#### Return value
 
 This only returns a response on success
 
