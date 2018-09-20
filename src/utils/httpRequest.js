@@ -1,17 +1,31 @@
-export const httpRequest = (filePath, callBackFn) => {
+export const xmlHttpRequest = (filePath, callBackFn) => {
     const xReq = new XMLHttpRequest();
-    xReq.open("GET", filePath, true);
+    xReq.open('GET', filePath, true);
     xReq.onload = () => {
         if (xReq.readyState === 4) {
             if (xReq.status === 200) {
-                callBackFn(xReq.responseText);
+                callBackFn(xReq);
             } else {
-                console.log('status text: ', xReq.statusText);
+                callBackFn(null);
             }
         }
     };
     xReq.onerror = () => {
-        console.log('error loading references: ', xReq.statusText);
-    }
+        callBackFn(undefined);
+    };
+    xReq.send(null);
+};
+
+export const xmlHttpRequestOnSuccess = (filePath, callBackFn) => {
+    const xReq = new XMLHttpRequest();
+    xReq.open('GET', filePath, true);
+    xReq.onload = () => {
+        if (xReq.readyState === 4) {
+            if (xReq.status === 200) {
+                callBackFn(xReq);
+            }
+        }
+    };
+
     xReq.send(null);
 };
