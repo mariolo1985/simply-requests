@@ -32,26 +32,39 @@ At the moment, styles has to be add one of two ways:
 
 ## Functions
 
-N/A
+> httpRequest
+
+```javascript
+import {httpRequest} from 'simply-requests';
+
+const myCallback = (response) => {
+    console.log('response: ', response);
+};
+
+(() => {
+    httpRequest('/data/menu.json', myCallback);
+})();
+
+```
 
 ## Parameters
 
 | Parameter Name   | Type   | Required   | Default Value   | Description   |
 | --- | --- | --- | --- | --- |
-| children | node | true | null | Children nodes to display per page |
-| vertical | boolean | false | true | Paging up and down is on by default |
+| filePath | string | true | null | relative path to your file |
+| callBackFn | function | true | null | function to call and return request in callback parameter |
 
-**children**
+**filePath**
 
-`type: node`
+`type: string`
 
-Each children node inside ```<SimplyPaging/>``` component will be in its own page.
+The path to your file
 
-**vertical**
+**callBackFn**
 
-`type: boolean`
+`type: function`
 
-> WIP - currently only pages up and down
+Function to call when a response happens
 
 ## Future Features
 
