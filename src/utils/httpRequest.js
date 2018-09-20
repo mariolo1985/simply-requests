@@ -4,14 +4,14 @@ export const httpRequest = (filePath, callBackFn) => {
     xReq.onload = () => {
         if (xReq.readyState === 4) {
             if (xReq.status === 200) {
-                callBackFn(xReq.responseText);
+                callBackFn(xReq);
             } else {
-                console.log('status text: ', xReq.statusText);
+                callBackFn(null);
             }
         }
     };
     xReq.onerror = () => {
-        console.log('error loading references: ', xReq.statusText);
+        callBackFn(undefined);
     }
     xReq.send(null);
 };
