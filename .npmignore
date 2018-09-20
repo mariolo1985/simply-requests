@@ -1,0 +1,12 @@
+src/
+node_modules/
+.babelrc
+.eslintrc.json
+.gitignore
+.npmignore
+.nvmrc
+readme.md
+yarn.lock
+webpack.config.js
+build/
+demo/
