@@ -60,7 +60,7 @@ Function to call when a response happens
 ### xmlHttpRequestOnSuccess
 
 ```javascript
-import {xmlHttpRequestOnSuccess} from 'simply-requests';
+import { xmlHttpRequestOnSuccess } from 'simply-requests';
 
 const myCallback = (response) => {
     console.log('response: ', response);
