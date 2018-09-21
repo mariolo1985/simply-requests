@@ -1,4 +1,4 @@
-# Simply Paging
+# Simply Requests
 
 A simple module that handles requests.
 
